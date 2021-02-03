@@ -26,7 +26,7 @@ import java.math.BigDecimal;
  * EmailRequestSmtp
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-02-03T16:29:40.837Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-02-03T17:38:40.051Z[GMT]")
 public class EmailRequestSmtp {
   @SerializedName("email_from")
   private String emailFrom = user@example.org;

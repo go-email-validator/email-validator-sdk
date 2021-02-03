@@ -5,4 +5,4 @@ test
 git_push.sh
 phpunit.xml.dist
 
-vendor
+composer.json

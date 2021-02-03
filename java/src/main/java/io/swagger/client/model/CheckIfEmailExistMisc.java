@@ -25,7 +25,7 @@ import java.io.IOException;
  * CheckIfEmailExistMisc
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-02-03T16:29:40.837Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-02-03T17:38:40.051Z[GMT]")
 public class CheckIfEmailExistMisc {
   @SerializedName("is_disposable")
   private Boolean isDisposable = null;

@@ -5,4 +5,4 @@ test
 git_push.sh
 mocha.opts
 
-node_modules
+package.json

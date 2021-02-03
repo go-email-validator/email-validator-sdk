@@ -20,9 +20,6 @@
         "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "Swagger\\Client\\" : "php/SwaggerClient-php/lib/" }
     }
 }
