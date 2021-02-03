@@ -1,0 +1,8 @@
+# swagger-codegen
+test
+.php_cs
+.travis.yml
+git_push.sh
+phpunit.xml.dist
+
+vendor

@@ -1,0 +1,15 @@
+{
+  "name": "email_validator",
+  "version": "0.0.1",
+  "description": "SDK for email validator",
+  "license": "MIT",
+  "main": "src/index.js",
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "superagent": "3.7.0"
+  }
+}
