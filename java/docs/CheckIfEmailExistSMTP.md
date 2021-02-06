@@ -1,6 +1,9 @@
+
+
 # CheckIfEmailExistSMTP
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **canConnectSmtp** | **Boolean** |  |  [optional]
@@ -8,3 +11,6 @@ Name | Type | Description | Notes
 **isCatchAll** | **Boolean** |  |  [optional]
 **isDeliverable** | **Boolean** |  |  [optional]
 **isDisabled** | **Boolean** |  |  [optional]
+
+
+

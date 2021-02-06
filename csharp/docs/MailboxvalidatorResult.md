@@ -1,4 +1,6 @@
-# IO.Swagger.Model.MailboxvalidatorResult
+
+# Org.OpenAPITools.Model.MailboxvalidatorResult
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -20,9 +22,11 @@ Name | Type | Description | Notes
 **MailboxvalidatorScore** | **string** |  | [optional] 
 **TimeTaken** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
-**CreditsAvailable** | **long?** |  | [optional] 
+**CreditsAvailable** | **long** |  | [optional] 
 **ErrorCode** | **string** |  | [optional] 
 **ErrorMessage** | **string** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

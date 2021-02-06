@@ -1,5 +1,48 @@
+
+
 # EmailResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**input** | **String** |  |  [optional]
+**isReachable** | **String** |  |  [optional]
+**misc** | [**CheckIfEmailExistMisc**](CheckIfEmailExistMisc.md) |  |  [optional]
+**mx** | [**CheckIfEmailExistMX**](CheckIfEmailExistMX.md) |  |  [optional]
+**smtp** | [**CheckIfEmailExistSMTP**](CheckIfEmailExistSMTP.md) |  |  [optional]
+**syntax** | [**CheckIfEmailExistSyntax**](CheckIfEmailExistSyntax.md) |  |  [optional]
+**error** | **String** |  |  [optional]
+**emailAddress** | **String** |  |  [optional]
+**domain** | **String** |  |  [optional]
+**isFree** | **String** |  |  [optional]
+**isSyntax** | **String** |  |  [optional]
+**isDomain** | **String** |  |  [optional]
+**isSmtp** | **String** |  |  [optional]
+**isVerified** | **String** |  |  [optional]
+**isServerDown** | **String** |  |  [optional]
+**isGreylisted** | **String** |  |  [optional]
+**isDisposable** | **Boolean** |  |  [optional]
+**isSuppressed** | **String** |  |  [optional]
+**isRole** | **String** |  |  [optional]
+**isHighRisk** | **String** |  |  [optional]
+**isCatchall** | **String** |  |  [optional]
+**mailboxvalidatorScore** | **String** |  |  [optional]
+**timeTaken** | **String** |  |  [optional]
+**status** | **String** |  |  [optional]
+**creditsAvailable** | **Long** |  |  [optional]
+**errorCode** | **String** |  |  [optional]
+**errorMessage** | **String** |  |  [optional]
+**canConnectSmtp** | **Boolean** |  |  [optional]
+**email** | **String** |  |  [optional]
+**isCatchAll** | **Boolean** |  |  [optional]
+**isDeliverable** | **Boolean** |  |  [optional]
+**isDisabled** | **Boolean** |  |  [optional]
+**isInboxFull** | **Boolean** |  |  [optional]
+**isRoleAccount** | **Boolean** |  |  [optional]
+**mxRecords** | [**PromptEmailVerificationApiMX**](PromptEmailVerificationApiMX.md) |  |  [optional]
+**syntaxValid** | **Boolean** |  |  [optional]
+**message** | **String** |  |  [optional]
+
+
+

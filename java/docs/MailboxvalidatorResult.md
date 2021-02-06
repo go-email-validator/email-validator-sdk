@@ -1,6 +1,9 @@
+
+
 # MailboxvalidatorResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **emailAddress** | **String** |  |  [optional]
@@ -23,3 +26,6 @@ Name | Type | Description | Notes
 **creditsAvailable** | **Long** |  |  [optional]
 **errorCode** | **String** |  |  [optional]
 **errorMessage** | **String** |  |  [optional]
+
+
+

@@ -1,14 +1,16 @@
 # EmailValidator.EmailValidationApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**emailValidationSingleValidationGet**](EmailValidationApi.md#emailValidationSingleValidationGet) | **GET** /v1/validation/single/{email} | 
 [**emailValidationSingleValidationPost**](EmailValidationApi.md#emailValidationSingleValidationPost) | **POST** /v1/validation/single | 
 
-<a name="emailValidationSingleValidationGet"></a>
-# **emailValidationSingleValidationGet**
+
+
+## emailValidationSingleValidationGet
+
 > EmailResponse emailValidationSingleValidationGet(email, opts)
 
 
@@ -16,22 +18,20 @@ Method | HTTP request | Description
 POST request contains additional parameters for detailed configuration
 
 ### Example
+
 ```javascript
 import EmailValidator from 'email_validator';
 let defaultClient = EmailValidator.ApiClient.instance;
-
 // Configure API key authorization: AuthKey
 let AuthKey = defaultClient.authentications['AuthKey'];
 AuthKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //AuthKey.apiKeyPrefix = 'Token';
-
 // Configure API key authorization: RapidApiKey
 let RapidApiKey = defaultClient.authentications['RapidApiKey'];
 RapidApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //RapidApiKey.apiKeyPrefix = 'Token';
-
 // Configure API key authorization: RapidApiSecret
 let RapidApiSecret = defaultClient.authentications['RapidApiSecret'];
 RapidApiSecret.apiKey = 'YOUR API KEY';
@@ -40,7 +40,7 @@ RapidApiSecret.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EmailValidator.EmailValidationApi();
 let email = "email_example"; // String | 
-let opts = { 
+let opts = {
   'resultType': new EmailValidator.ResultType() // ResultType | ResultTypeDescription
 };
 apiInstance.emailValidationSingleValidationGet(email, opts, (error, data, response) => {
@@ -53,6 +53,7 @@ apiInstance.emailValidationSingleValidationGet(email, opts, (error, data, respon
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -69,32 +70,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="emailValidationSingleValidationPost"></a>
-# **emailValidationSingleValidationPost**
+
+## emailValidationSingleValidationPost
+
 > EmailResponse emailValidationSingleValidationPost(body)
 
 
 
 ### Example
+
 ```javascript
 import EmailValidator from 'email_validator';
 let defaultClient = EmailValidator.ApiClient.instance;
-
 // Configure API key authorization: AuthKey
 let AuthKey = defaultClient.authentications['AuthKey'];
 AuthKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //AuthKey.apiKeyPrefix = 'Token';
-
 // Configure API key authorization: RapidApiKey
 let RapidApiKey = defaultClient.authentications['RapidApiKey'];
 RapidApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //RapidApiKey.apiKeyPrefix = 'Token';
-
 // Configure API key authorization: RapidApiSecret
 let RapidApiSecret = defaultClient.authentications['RapidApiSecret'];
 RapidApiSecret.apiKey = 'YOUR API KEY';
@@ -103,7 +103,6 @@ RapidApiSecret.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EmailValidator.EmailValidationApi();
 let body = new EmailValidator.EmailRequest(); // EmailRequest | 
-
 apiInstance.emailValidationSingleValidationPost(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -114,6 +113,7 @@ apiInstance.emailValidationSingleValidationPost(body, (error, data, response) =>
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,6 +129,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

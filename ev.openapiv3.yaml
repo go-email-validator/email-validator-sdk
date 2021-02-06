@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.0
 info:
   title: Email Validator
   version: 0.0.1
@@ -224,7 +224,7 @@ components:
         result_type:
           $ref: '#/components/schemas/ResultType'
     EmailResponse:
-      oneOf:
+      oneOf: # oneOf: https://github.com/swagger-api/swagger-codegen/issues/10896
         - $ref: '#/components/schemas/CheckIfEmailExistResult'
         - $ref: '#/components/schemas/MailboxvalidatorResult'
         - $ref: '#/components/schemas/PromptEmailVerificationApiResult'

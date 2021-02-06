@@ -186,6 +186,6 @@ $RECYCLE.BIN/
 **/*.sln.ide
 
 # swagger-codegen
-src/IO.Swagger.Test
+src/Org.OpenAPITools.Test
 .travis.yml
 git_push.sh

@@ -63,9 +63,10 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
+test/**
+!test/test_call_api.py
 
-# swagger-codegen
-test
+.gitlab-ci.yml
 .travis.yml
 git_push.sh
 tox.ini

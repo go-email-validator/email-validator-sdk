@@ -1,34 +1,38 @@
-# IO.Swagger.Api.EmailValidationApi
+# Org.OpenAPITools.Api.EmailValidationApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EmailValidationSingleValidationGet**](EmailValidationApi.md#emailvalidationsinglevalidationget) | **GET** /v1/validation/single/{email} | 
 [**EmailValidationSingleValidationPost**](EmailValidationApi.md#emailvalidationsinglevalidationpost) | **POST** /v1/validation/single | 
 
-<a name="emailvalidationsinglevalidationget"></a>
-# **EmailValidationSingleValidationGet**
-> EmailResponse EmailValidationSingleValidationGet (string email, ResultType resultType = null)
+
+
+## EmailValidationSingleValidationGet
+
+> EmailResponse EmailValidationSingleValidationGet (string email, ResultType? resultType = null)
 
 
 
 POST request contains additional parameters for detailed configuration
 
 ### Example
+
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
 namespace Example
 {
     public class EmailValidationSingleValidationGetExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration.Default.BasePath = "http://localhost";
             // Configure API key authorization: AuthKey
             Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -42,18 +46,20 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("X-RapidAPI-Proxy-Secret", "Bearer");
 
-            var apiInstance = new EmailValidationApi();
+            var apiInstance = new EmailValidationApi(Configuration.Default);
             var email = email_example;  // string | 
-            var resultType = new ResultType(); // ResultType | ResultTypeDescription (optional) 
+            var resultType = ;  // ResultType? | ResultTypeDescription (optional) 
 
             try
             {
                 EmailResponse result = apiInstance.EmailValidationSingleValidationGet(email, resultType);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling EmailValidationApi.EmailValidationSingleValidationGet: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -62,10 +68,11 @@ namespace Example
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**|  | 
- **resultType** | [**ResultType**](ResultType.md)| ResultTypeDescription | [optional] 
+ **resultType** | **ResultType?**| ResultTypeDescription | [optional] 
 
 ### Return type
 
@@ -77,30 +84,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-<a name="emailvalidationsinglevalidationpost"></a>
-# **EmailValidationSingleValidationPost**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailValidationSingleValidationPost
+
 > EmailResponse EmailValidationSingleValidationPost (EmailRequest body)
 
 
 
 ### Example
+
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
 namespace Example
 {
     public class EmailValidationSingleValidationPostExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration.Default.BasePath = "http://localhost";
             // Configure API key authorization: AuthKey
             Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -114,7 +134,7 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.AddApiKeyPrefix("X-RapidAPI-Proxy-Secret", "Bearer");
 
-            var apiInstance = new EmailValidationApi();
+            var apiInstance = new EmailValidationApi(Configuration.Default);
             var body = new EmailRequest(); // EmailRequest | 
 
             try
@@ -122,9 +142,11 @@ namespace Example
                 EmailResponse result = apiInstance.EmailValidationSingleValidationPost(body);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling EmailValidationApi.EmailValidationSingleValidationPost: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -132,6 +154,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -147,7 +170,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

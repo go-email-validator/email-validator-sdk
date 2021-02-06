@@ -1,6 +1,9 @@
+
+
 # PromptEmailVerificationApiResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **canConnectSmtp** | **Boolean** |  |  [optional]
@@ -14,3 +17,6 @@ Name | Type | Description | Notes
 **mxRecords** | [**PromptEmailVerificationApiMX**](PromptEmailVerificationApiMX.md) |  |  [optional]
 **syntaxValid** | **Boolean** |  |  [optional]
 **message** | **String** |  |  [optional]
+
+
+

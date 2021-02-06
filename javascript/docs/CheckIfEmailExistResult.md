@@ -1,6 +1,7 @@
 # EmailValidator.CheckIfEmailExistResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **input** | **String** |  | [optional] 
@@ -10,3 +11,5 @@ Name | Type | Description | Notes
 **smtp** | [**CheckIfEmailExistSMTP**](CheckIfEmailExistSMTP.md) |  | [optional] 
 **syntax** | [**CheckIfEmailExistSyntax**](CheckIfEmailExistSyntax.md) |  | [optional] 
 **error** | **String** |  | [optional] 
+
+
