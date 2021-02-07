@@ -37,3 +37,4 @@ node_modules
 .travis.yml
 git_push.sh
 mocha.opts
+test

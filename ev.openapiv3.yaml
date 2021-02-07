@@ -226,7 +226,6 @@ components:
           $ref: '#/components/schemas/ResultType'
     EmailResponse:
       type: object
-      nullable: true
       properties:
         check_if_email_exist:
           $ref: '#/components/schemas/CheckIfEmailExistResult'
