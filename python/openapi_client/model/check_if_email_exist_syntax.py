@@ -74,7 +74,7 @@ class CheckIfEmailExistSyntax(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'address': (str,),  # noqa: E501
+            'address': (str, none_type,),  # noqa: E501
             'domain': (str,),  # noqa: E501
             'is_valid_syntax': (bool,),  # noqa: E501
             'username': (str,),  # noqa: E501
@@ -138,7 +138,7 @@ class CheckIfEmailExistSyntax(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            address (str): [optional]  # noqa: E501
+            address (str, none_type): [optional]  # noqa: E501
             domain (str): [optional]  # noqa: E501
             is_valid_syntax (bool): [optional]  # noqa: E501
             username (str): [optional]  # noqa: E501

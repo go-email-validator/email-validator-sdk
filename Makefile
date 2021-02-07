@@ -24,17 +24,19 @@ define openapi_generator
 	-o /local/out/
 endef
 
+# docker run --rm openapitools/openapi-generator-cli:latest generate
+
 update: gen cp.openapi.file
 
 gen: gen.go gen.php gen.python gen.java gen.javascript gen.csharp
 
-PHP_FIND=find php -type f -name '*.php' -not -path "./vendor/*"
+PHP_FIND=find php -type f -name '*.php' ! -path "*/vendor/*"
 
 gen.php:
 	$(call openapi_generator,php)
 	$(PHP_FIND) -exec sed -i 's/public const DISCRIMINATOR = null;/const DISCRIMINATOR = null;/g' {} \;
 	$(PHP_FIND) -exec sed -i -E 's/(= |\(|n )(\$$.+)? +\?\?/\1isset(\2) ? \2 :/g' {} \;
-	$(PHP_FIND) -exec sed -i -E 's/IsCatchall/IsCatch_all/g' {} \;
+	$(PHP_FIND) -exec sed -i 's/IsCatchall/IsCatch_all/g' {} \;
 	$(PHP_FIND) -exec sed -i 's/PHP version 7.2/PHP version 5.6/g' {} \;
 
 gen.go:

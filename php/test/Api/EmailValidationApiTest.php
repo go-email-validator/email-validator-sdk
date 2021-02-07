@@ -1,7 +1,7 @@
 <?php
 /**
  * EmailValidationApiTest
- * PHP version 7.2
+ * PHP version 5.6
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -73,7 +73,7 @@ class EmailValidationApiTest extends TestCase
         $email = $_ENV["EMAIL"];
         $result = $this->api->emailValidationSingleValidationGet($email);
 
-        $this->assertEquals($result->getInput(), $email);
+        $this->assertEquals($result->getCheckIfEmailExist()->getInput(), $email);
     }
 
     /**

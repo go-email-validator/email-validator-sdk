@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** |  | [optional] 
+**address** | **str, none_type** |  | [optional] 
 **domain** | **str** |  | [optional] 
 **is_valid_syntax** | **bool** |  | [optional] 
 **username** | **str** |  | [optional] 

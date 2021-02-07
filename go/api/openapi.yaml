@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   description: |
     All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds.
@@ -91,6 +91,9 @@ components:
       title: ResultType
       type: string
     CheckIfEmailExistMisc:
+      example:
+        is_role_account: true
+        is_disposable: true
       properties:
         is_disposable:
           type: boolean
@@ -98,6 +101,12 @@ components:
           type: boolean
       type: object
     CheckIfEmailExistSMTP:
+      example:
+        is_catch_all: true
+        can_connect_smtp: true
+        has_full_inbox: true
+        is_disabled: true
+        is_deliverable: true
       properties:
         can_connect_smtp:
           type: boolean
@@ -111,8 +120,14 @@ components:
           type: boolean
       type: object
     CheckIfEmailExistSyntax:
+      example:
+        address: address
+        domain: domain
+        is_valid_syntax: true
+        username: username
       properties:
         address:
+          nullable: true
           type: string
         domain:
           type: string
@@ -122,6 +137,11 @@ components:
           type: string
       type: object
     CheckIfEmailExistMX:
+      example:
+        accepts_mail: true
+        records:
+        - records
+        - records
       properties:
         accepts_mail:
           type: boolean
@@ -131,6 +151,29 @@ components:
           type: array
       type: object
     CheckIfEmailExistResult:
+      example:
+        input: input
+        smtp:
+          is_catch_all: true
+          can_connect_smtp: true
+          has_full_inbox: true
+          is_disabled: true
+          is_deliverable: true
+        is_reachable: is_reachable
+        syntax:
+          address: address
+          domain: domain
+          is_valid_syntax: true
+          username: username
+        mx:
+          accepts_mail: true
+          records:
+          - records
+          - records
+        error: error
+        misc:
+          is_role_account: true
+          is_disposable: true
       properties:
         input:
           type: string
@@ -148,6 +191,27 @@ components:
           type: string
       type: object
     MailboxvalidatorResult:
+      example:
+        error_message: error_message
+        is_domain: is_domain
+        is_server_down: is_server_down
+        is_catchall: is_catchall
+        is_verified: is_verified
+        is_disposable: is_disposable
+        time_taken: time_taken
+        is_suppressed: is_suppressed
+        is_role: is_role
+        credits_available: 0
+        is_greylisted: is_greylisted
+        email_address: email_address
+        domain: domain
+        is_free: is_free
+        is_smtp: is_smtp
+        is_syntax: is_syntax
+        mailboxvalidator_score: mailboxvalidator_score
+        error_code: error_code
+        is_high_risk: is_high_risk
+        status: status
       properties:
         email_address:
           type: string
@@ -192,6 +256,22 @@ components:
           type: string
       type: object
     PromptEmailVerificationApiResult:
+      example:
+        mx_records:
+          accepts_mail: true
+          records:
+          - records
+          - records
+        is_catch_all: true
+        can_connect_smtp: true
+        is_disabled: true
+        is_inbox_full: true
+        is_role_account: true
+        is_deliverable: true
+        message: message
+        is_disposable: true
+        syntax_valid: true
+        email: email
       properties:
         can_connect_smtp:
           type: boolean
@@ -217,6 +297,11 @@ components:
           type: string
       type: object
     PromptEmailVerificationApiMX:
+      example:
+        accepts_mail: true
+        records:
+        - records
+        - records
       properties:
         accepts_mail:
           type: boolean
@@ -256,10 +341,76 @@ components:
           $ref: '#/components/schemas/ResultType'
       type: object
     EmailResponse:
-      oneOf:
-      - $ref: '#/components/schemas/CheckIfEmailExistResult'
-      - $ref: '#/components/schemas/MailboxvalidatorResult'
-      - $ref: '#/components/schemas/PromptEmailVerificationApiResult'
+      example:
+        mailboxvalidator:
+          error_message: error_message
+          is_domain: is_domain
+          is_server_down: is_server_down
+          is_catchall: is_catchall
+          is_verified: is_verified
+          is_disposable: is_disposable
+          time_taken: time_taken
+          is_suppressed: is_suppressed
+          is_role: is_role
+          credits_available: 0
+          is_greylisted: is_greylisted
+          email_address: email_address
+          domain: domain
+          is_free: is_free
+          is_smtp: is_smtp
+          is_syntax: is_syntax
+          mailboxvalidator_score: mailboxvalidator_score
+          error_code: error_code
+          is_high_risk: is_high_risk
+          status: status
+        prompt_email_verification_api:
+          mx_records:
+            accepts_mail: true
+            records:
+            - records
+            - records
+          is_catch_all: true
+          can_connect_smtp: true
+          is_disabled: true
+          is_inbox_full: true
+          is_role_account: true
+          is_deliverable: true
+          message: message
+          is_disposable: true
+          syntax_valid: true
+          email: email
+        check_if_email_exist:
+          input: input
+          smtp:
+            is_catch_all: true
+            can_connect_smtp: true
+            has_full_inbox: true
+            is_disabled: true
+            is_deliverable: true
+          is_reachable: is_reachable
+          syntax:
+            address: address
+            domain: domain
+            is_valid_syntax: true
+            username: username
+          mx:
+            accepts_mail: true
+            records:
+            - records
+            - records
+          error: error
+          misc:
+            is_role_account: true
+            is_disposable: true
+      nullable: true
+      properties:
+        check_if_email_exist:
+          $ref: '#/components/schemas/CheckIfEmailExistResult'
+        mailboxvalidator:
+          $ref: '#/components/schemas/MailboxvalidatorResult'
+        prompt_email_verification_api:
+          $ref: '#/components/schemas/PromptEmailVerificationApiResult'
+      type: object
     EmailRequest_smtp:
       example:
         proxy: https://openapi-generator.tech

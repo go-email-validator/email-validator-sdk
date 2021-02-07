@@ -12,13 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import CheckIfEmailExistMX from './CheckIfEmailExistMX';
-import CheckIfEmailExistMisc from './CheckIfEmailExistMisc';
 import CheckIfEmailExistResult from './CheckIfEmailExistResult';
-import CheckIfEmailExistSMTP from './CheckIfEmailExistSMTP';
-import CheckIfEmailExistSyntax from './CheckIfEmailExistSyntax';
 import MailboxvalidatorResult from './MailboxvalidatorResult';
-import PromptEmailVerificationApiMX from './PromptEmailVerificationApiMX';
 import PromptEmailVerificationApiResult from './PromptEmailVerificationApiResult';
 
 /**
@@ -30,12 +25,9 @@ class EmailResponse {
     /**
      * Constructs a new <code>EmailResponse</code>.
      * @alias module:model/EmailResponse
-     * @implements module:model/CheckIfEmailExistResult
-     * @implements module:model/MailboxvalidatorResult
-     * @implements module:model/PromptEmailVerificationApiResult
      */
     constructor() { 
-        CheckIfEmailExistResult.initialize(this);MailboxvalidatorResult.initialize(this);PromptEmailVerificationApiResult.initialize(this);
+        
         EmailResponse.initialize(this);
     }
 
@@ -57,120 +49,15 @@ class EmailResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EmailResponse();
-            CheckIfEmailExistResult.constructFromObject(data, obj);
-            MailboxvalidatorResult.constructFromObject(data, obj);
-            PromptEmailVerificationApiResult.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('input')) {
-                obj['input'] = ApiClient.convertToType(data['input'], 'String');
+            if (data.hasOwnProperty('check_if_email_exist')) {
+                obj['check_if_email_exist'] = CheckIfEmailExistResult.constructFromObject(data['check_if_email_exist']);
             }
-            if (data.hasOwnProperty('is_reachable')) {
-                obj['is_reachable'] = ApiClient.convertToType(data['is_reachable'], 'String');
+            if (data.hasOwnProperty('mailboxvalidator')) {
+                obj['mailboxvalidator'] = MailboxvalidatorResult.constructFromObject(data['mailboxvalidator']);
             }
-            if (data.hasOwnProperty('misc')) {
-                obj['misc'] = CheckIfEmailExistMisc.constructFromObject(data['misc']);
-            }
-            if (data.hasOwnProperty('mx')) {
-                obj['mx'] = CheckIfEmailExistMX.constructFromObject(data['mx']);
-            }
-            if (data.hasOwnProperty('smtp')) {
-                obj['smtp'] = CheckIfEmailExistSMTP.constructFromObject(data['smtp']);
-            }
-            if (data.hasOwnProperty('syntax')) {
-                obj['syntax'] = CheckIfEmailExistSyntax.constructFromObject(data['syntax']);
-            }
-            if (data.hasOwnProperty('error')) {
-                obj['error'] = ApiClient.convertToType(data['error'], 'String');
-            }
-            if (data.hasOwnProperty('email_address')) {
-                obj['email_address'] = ApiClient.convertToType(data['email_address'], 'String');
-            }
-            if (data.hasOwnProperty('domain')) {
-                obj['domain'] = ApiClient.convertToType(data['domain'], 'String');
-            }
-            if (data.hasOwnProperty('is_free')) {
-                obj['is_free'] = ApiClient.convertToType(data['is_free'], 'String');
-            }
-            if (data.hasOwnProperty('is_syntax')) {
-                obj['is_syntax'] = ApiClient.convertToType(data['is_syntax'], 'String');
-            }
-            if (data.hasOwnProperty('is_domain')) {
-                obj['is_domain'] = ApiClient.convertToType(data['is_domain'], 'String');
-            }
-            if (data.hasOwnProperty('is_smtp')) {
-                obj['is_smtp'] = ApiClient.convertToType(data['is_smtp'], 'String');
-            }
-            if (data.hasOwnProperty('is_verified')) {
-                obj['is_verified'] = ApiClient.convertToType(data['is_verified'], 'String');
-            }
-            if (data.hasOwnProperty('is_server_down')) {
-                obj['is_server_down'] = ApiClient.convertToType(data['is_server_down'], 'String');
-            }
-            if (data.hasOwnProperty('is_greylisted')) {
-                obj['is_greylisted'] = ApiClient.convertToType(data['is_greylisted'], 'String');
-            }
-            if (data.hasOwnProperty('is_disposable')) {
-                obj['is_disposable'] = ApiClient.convertToType(data['is_disposable'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_suppressed')) {
-                obj['is_suppressed'] = ApiClient.convertToType(data['is_suppressed'], 'String');
-            }
-            if (data.hasOwnProperty('is_role')) {
-                obj['is_role'] = ApiClient.convertToType(data['is_role'], 'String');
-            }
-            if (data.hasOwnProperty('is_high_risk')) {
-                obj['is_high_risk'] = ApiClient.convertToType(data['is_high_risk'], 'String');
-            }
-            if (data.hasOwnProperty('is_catchall')) {
-                obj['is_catchall'] = ApiClient.convertToType(data['is_catchall'], 'String');
-            }
-            if (data.hasOwnProperty('mailboxvalidator_score')) {
-                obj['mailboxvalidator_score'] = ApiClient.convertToType(data['mailboxvalidator_score'], 'String');
-            }
-            if (data.hasOwnProperty('time_taken')) {
-                obj['time_taken'] = ApiClient.convertToType(data['time_taken'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
-            }
-            if (data.hasOwnProperty('credits_available')) {
-                obj['credits_available'] = ApiClient.convertToType(data['credits_available'], 'Number');
-            }
-            if (data.hasOwnProperty('error_code')) {
-                obj['error_code'] = ApiClient.convertToType(data['error_code'], 'String');
-            }
-            if (data.hasOwnProperty('error_message')) {
-                obj['error_message'] = ApiClient.convertToType(data['error_message'], 'String');
-            }
-            if (data.hasOwnProperty('can_connect_smtp')) {
-                obj['can_connect_smtp'] = ApiClient.convertToType(data['can_connect_smtp'], 'Boolean');
-            }
-            if (data.hasOwnProperty('email')) {
-                obj['email'] = ApiClient.convertToType(data['email'], 'String');
-            }
-            if (data.hasOwnProperty('is_catch_all')) {
-                obj['is_catch_all'] = ApiClient.convertToType(data['is_catch_all'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_deliverable')) {
-                obj['is_deliverable'] = ApiClient.convertToType(data['is_deliverable'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_disabled')) {
-                obj['is_disabled'] = ApiClient.convertToType(data['is_disabled'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_inbox_full')) {
-                obj['is_inbox_full'] = ApiClient.convertToType(data['is_inbox_full'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_role_account')) {
-                obj['is_role_account'] = ApiClient.convertToType(data['is_role_account'], 'Boolean');
-            }
-            if (data.hasOwnProperty('mx_records')) {
-                obj['mx_records'] = PromptEmailVerificationApiMX.constructFromObject(data['mx_records']);
-            }
-            if (data.hasOwnProperty('syntax_valid')) {
-                obj['syntax_valid'] = ApiClient.convertToType(data['syntax_valid'], 'Boolean');
-            }
-            if (data.hasOwnProperty('message')) {
-                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            if (data.hasOwnProperty('prompt_email_verification_api')) {
+                obj['prompt_email_verification_api'] = PromptEmailVerificationApiResult.constructFromObject(data['prompt_email_verification_api']);
             }
         }
         return obj;
@@ -180,346 +67,21 @@ class EmailResponse {
 }
 
 /**
- * @member {String} input
+ * @member {module:model/CheckIfEmailExistResult} check_if_email_exist
  */
-EmailResponse.prototype['input'] = undefined;
+EmailResponse.prototype['check_if_email_exist'] = undefined;
 
 /**
- * @member {String} is_reachable
+ * @member {module:model/MailboxvalidatorResult} mailboxvalidator
  */
-EmailResponse.prototype['is_reachable'] = undefined;
+EmailResponse.prototype['mailboxvalidator'] = undefined;
 
 /**
- * @member {module:model/CheckIfEmailExistMisc} misc
+ * @member {module:model/PromptEmailVerificationApiResult} prompt_email_verification_api
  */
-EmailResponse.prototype['misc'] = undefined;
-
-/**
- * @member {module:model/CheckIfEmailExistMX} mx
- */
-EmailResponse.prototype['mx'] = undefined;
-
-/**
- * @member {module:model/CheckIfEmailExistSMTP} smtp
- */
-EmailResponse.prototype['smtp'] = undefined;
-
-/**
- * @member {module:model/CheckIfEmailExistSyntax} syntax
- */
-EmailResponse.prototype['syntax'] = undefined;
-
-/**
- * @member {String} error
- */
-EmailResponse.prototype['error'] = undefined;
-
-/**
- * @member {String} email_address
- */
-EmailResponse.prototype['email_address'] = undefined;
-
-/**
- * @member {String} domain
- */
-EmailResponse.prototype['domain'] = undefined;
-
-/**
- * @member {String} is_free
- */
-EmailResponse.prototype['is_free'] = undefined;
-
-/**
- * @member {String} is_syntax
- */
-EmailResponse.prototype['is_syntax'] = undefined;
-
-/**
- * @member {String} is_domain
- */
-EmailResponse.prototype['is_domain'] = undefined;
-
-/**
- * @member {String} is_smtp
- */
-EmailResponse.prototype['is_smtp'] = undefined;
-
-/**
- * @member {String} is_verified
- */
-EmailResponse.prototype['is_verified'] = undefined;
-
-/**
- * @member {String} is_server_down
- */
-EmailResponse.prototype['is_server_down'] = undefined;
-
-/**
- * @member {String} is_greylisted
- */
-EmailResponse.prototype['is_greylisted'] = undefined;
-
-/**
- * @member {Boolean} is_disposable
- */
-EmailResponse.prototype['is_disposable'] = undefined;
-
-/**
- * @member {String} is_suppressed
- */
-EmailResponse.prototype['is_suppressed'] = undefined;
-
-/**
- * @member {String} is_role
- */
-EmailResponse.prototype['is_role'] = undefined;
-
-/**
- * @member {String} is_high_risk
- */
-EmailResponse.prototype['is_high_risk'] = undefined;
-
-/**
- * @member {String} is_catchall
- */
-EmailResponse.prototype['is_catchall'] = undefined;
-
-/**
- * @member {String} mailboxvalidator_score
- */
-EmailResponse.prototype['mailboxvalidator_score'] = undefined;
-
-/**
- * @member {String} time_taken
- */
-EmailResponse.prototype['time_taken'] = undefined;
-
-/**
- * @member {String} status
- */
-EmailResponse.prototype['status'] = undefined;
-
-/**
- * @member {Number} credits_available
- */
-EmailResponse.prototype['credits_available'] = undefined;
-
-/**
- * @member {String} error_code
- */
-EmailResponse.prototype['error_code'] = undefined;
-
-/**
- * @member {String} error_message
- */
-EmailResponse.prototype['error_message'] = undefined;
-
-/**
- * @member {Boolean} can_connect_smtp
- */
-EmailResponse.prototype['can_connect_smtp'] = undefined;
-
-/**
- * @member {String} email
- */
-EmailResponse.prototype['email'] = undefined;
-
-/**
- * @member {Boolean} is_catch_all
- */
-EmailResponse.prototype['is_catch_all'] = undefined;
-
-/**
- * @member {Boolean} is_deliverable
- */
-EmailResponse.prototype['is_deliverable'] = undefined;
-
-/**
- * @member {Boolean} is_disabled
- */
-EmailResponse.prototype['is_disabled'] = undefined;
-
-/**
- * @member {Boolean} is_inbox_full
- */
-EmailResponse.prototype['is_inbox_full'] = undefined;
-
-/**
- * @member {Boolean} is_role_account
- */
-EmailResponse.prototype['is_role_account'] = undefined;
-
-/**
- * @member {module:model/PromptEmailVerificationApiMX} mx_records
- */
-EmailResponse.prototype['mx_records'] = undefined;
-
-/**
- * @member {Boolean} syntax_valid
- */
-EmailResponse.prototype['syntax_valid'] = undefined;
-
-/**
- * @member {String} message
- */
-EmailResponse.prototype['message'] = undefined;
+EmailResponse.prototype['prompt_email_verification_api'] = undefined;
 
 
-// Implement CheckIfEmailExistResult interface:
-/**
- * @member {String} input
- */
-CheckIfEmailExistResult.prototype['input'] = undefined;
-/**
- * @member {String} is_reachable
- */
-CheckIfEmailExistResult.prototype['is_reachable'] = undefined;
-/**
- * @member {module:model/CheckIfEmailExistMisc} misc
- */
-CheckIfEmailExistResult.prototype['misc'] = undefined;
-/**
- * @member {module:model/CheckIfEmailExistMX} mx
- */
-CheckIfEmailExistResult.prototype['mx'] = undefined;
-/**
- * @member {module:model/CheckIfEmailExistSMTP} smtp
- */
-CheckIfEmailExistResult.prototype['smtp'] = undefined;
-/**
- * @member {module:model/CheckIfEmailExistSyntax} syntax
- */
-CheckIfEmailExistResult.prototype['syntax'] = undefined;
-/**
- * @member {String} error
- */
-CheckIfEmailExistResult.prototype['error'] = undefined;
-// Implement MailboxvalidatorResult interface:
-/**
- * @member {String} email_address
- */
-MailboxvalidatorResult.prototype['email_address'] = undefined;
-/**
- * @member {String} domain
- */
-MailboxvalidatorResult.prototype['domain'] = undefined;
-/**
- * @member {String} is_free
- */
-MailboxvalidatorResult.prototype['is_free'] = undefined;
-/**
- * @member {String} is_syntax
- */
-MailboxvalidatorResult.prototype['is_syntax'] = undefined;
-/**
- * @member {String} is_domain
- */
-MailboxvalidatorResult.prototype['is_domain'] = undefined;
-/**
- * @member {String} is_smtp
- */
-MailboxvalidatorResult.prototype['is_smtp'] = undefined;
-/**
- * @member {String} is_verified
- */
-MailboxvalidatorResult.prototype['is_verified'] = undefined;
-/**
- * @member {String} is_server_down
- */
-MailboxvalidatorResult.prototype['is_server_down'] = undefined;
-/**
- * @member {String} is_greylisted
- */
-MailboxvalidatorResult.prototype['is_greylisted'] = undefined;
-/**
- * @member {String} is_disposable
- */
-MailboxvalidatorResult.prototype['is_disposable'] = undefined;
-/**
- * @member {String} is_suppressed
- */
-MailboxvalidatorResult.prototype['is_suppressed'] = undefined;
-/**
- * @member {String} is_role
- */
-MailboxvalidatorResult.prototype['is_role'] = undefined;
-/**
- * @member {String} is_high_risk
- */
-MailboxvalidatorResult.prototype['is_high_risk'] = undefined;
-/**
- * @member {String} is_catchall
- */
-MailboxvalidatorResult.prototype['is_catchall'] = undefined;
-/**
- * @member {String} mailboxvalidator_score
- */
-MailboxvalidatorResult.prototype['mailboxvalidator_score'] = undefined;
-/**
- * @member {String} time_taken
- */
-MailboxvalidatorResult.prototype['time_taken'] = undefined;
-/**
- * @member {String} status
- */
-MailboxvalidatorResult.prototype['status'] = undefined;
-/**
- * @member {Number} credits_available
- */
-MailboxvalidatorResult.prototype['credits_available'] = undefined;
-/**
- * @member {String} error_code
- */
-MailboxvalidatorResult.prototype['error_code'] = undefined;
-/**
- * @member {String} error_message
- */
-MailboxvalidatorResult.prototype['error_message'] = undefined;
-// Implement PromptEmailVerificationApiResult interface:
-/**
- * @member {Boolean} can_connect_smtp
- */
-PromptEmailVerificationApiResult.prototype['can_connect_smtp'] = undefined;
-/**
- * @member {String} email
- */
-PromptEmailVerificationApiResult.prototype['email'] = undefined;
-/**
- * @member {Boolean} is_catch_all
- */
-PromptEmailVerificationApiResult.prototype['is_catch_all'] = undefined;
-/**
- * @member {Boolean} is_deliverable
- */
-PromptEmailVerificationApiResult.prototype['is_deliverable'] = undefined;
-/**
- * @member {Boolean} is_disabled
- */
-PromptEmailVerificationApiResult.prototype['is_disabled'] = undefined;
-/**
- * @member {Boolean} is_disposable
- */
-PromptEmailVerificationApiResult.prototype['is_disposable'] = undefined;
-/**
- * @member {Boolean} is_inbox_full
- */
-PromptEmailVerificationApiResult.prototype['is_inbox_full'] = undefined;
-/**
- * @member {Boolean} is_role_account
- */
-PromptEmailVerificationApiResult.prototype['is_role_account'] = undefined;
-/**
- * @member {module:model/PromptEmailVerificationApiMX} mx_records
- */
-PromptEmailVerificationApiResult.prototype['mx_records'] = undefined;
-/**
- * @member {Boolean} syntax_valid
- */
-PromptEmailVerificationApiResult.prototype['syntax_valid'] = undefined;
-/**
- * @member {String} message
- */
-PromptEmailVerificationApiResult.prototype['message'] = undefined;
 
 
 

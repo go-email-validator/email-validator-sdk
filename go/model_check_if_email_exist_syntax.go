@@ -1,7 +1,7 @@
 /*
  * Email Validator
  *
- * All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds. 
+ * All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds.
  *
  * API version: 0.0.1
  */
@@ -16,10 +16,10 @@ import (
 
 // CheckIfEmailExistSyntax struct for CheckIfEmailExistSyntax
 type CheckIfEmailExistSyntax struct {
-	Address *string `json:"address,omitempty"`
-	Domain *string `json:"domain,omitempty"`
-	IsValidSyntax *bool `json:"is_valid_syntax,omitempty"`
-	Username *string `json:"username,omitempty"`
+	Address       NullableString `json:"address,omitempty"`
+	Domain        *string        `json:"domain,omitempty"`
+	IsValidSyntax *bool          `json:"is_valid_syntax,omitempty"`
+	Username      *string        `json:"username,omitempty"`
 }
 
 // NewCheckIfEmailExistSyntax instantiates a new CheckIfEmailExistSyntax object
@@ -39,36 +39,47 @@ func NewCheckIfEmailExistSyntaxWithDefaults() *CheckIfEmailExistSyntax {
 	return &this
 }
 
-// GetAddress returns the Address field value if set, zero value otherwise.
+// GetAddress returns the Address field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CheckIfEmailExistSyntax) GetAddress() string {
-	if o == nil || o.Address == nil {
+	if o == nil || o.Address.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Address
+	return *o.Address.Get()
 }
 
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CheckIfEmailExistSyntax) GetAddressOk() (*string, bool) {
-	if o == nil || o.Address == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Address, true
+	return o.Address.Get(), o.Address.IsSet()
 }
 
 // HasAddress returns a boolean if a field has been set.
 func (o *CheckIfEmailExistSyntax) HasAddress() bool {
-	if o != nil && o.Address != nil {
+	if o != nil && o.Address.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddress gets a reference to the given string and assigns it to the Address field.
+// SetAddress gets a reference to the given NullableString and assigns it to the Address field.
 func (o *CheckIfEmailExistSyntax) SetAddress(v string) {
-	o.Address = &v
+	o.Address.Set(&v)
+}
+
+// SetAddressNil sets the value for Address to be an explicit nil
+func (o *CheckIfEmailExistSyntax) SetAddressNil() {
+	o.Address.Set(nil)
+}
+
+// UnsetAddress ensures that no value is present for Address, not even an explicit nil
+func (o *CheckIfEmailExistSyntax) UnsetAddress() {
+	o.Address.Unset()
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
@@ -169,8 +180,8 @@ func (o *CheckIfEmailExistSyntax) SetUsername(v string) {
 
 func (o CheckIfEmailExistSyntax) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	if o.Address.IsSet() {
+		toSerialize["address"] = o.Address.Get()
 	}
 	if o.Domain != nil {
 		toSerialize["domain"] = o.Domain
@@ -219,5 +230,3 @@ func (v *NullableCheckIfEmailExistSyntax) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

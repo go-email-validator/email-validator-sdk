@@ -2,7 +2,7 @@
 /**
  * EmailResponse
  *
- * PHP version 7.2
+ * PHP version 5.6
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -60,43 +60,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'input' => 'string',
-        'is_reachable' => 'string',
-        'misc' => '\OpenAPI\Client\Model\CheckIfEmailExistMisc',
-        'mx' => '\OpenAPI\Client\Model\CheckIfEmailExistMX',
-        'smtp' => '\OpenAPI\Client\Model\CheckIfEmailExistSMTP',
-        'syntax' => '\OpenAPI\Client\Model\CheckIfEmailExistSyntax',
-        'error' => 'string',
-        'email_address' => 'string',
-        'domain' => 'string',
-        'is_free' => 'string',
-        'is_syntax' => 'string',
-        'is_domain' => 'string',
-        'is_smtp' => 'string',
-        'is_verified' => 'string',
-        'is_server_down' => 'string',
-        'is_greylisted' => 'string',
-        'is_disposable' => 'bool',
-        'is_suppressed' => 'string',
-        'is_role' => 'string',
-        'is_high_risk' => 'string',
-        'is_catchall' => 'string',
-        'mailboxvalidator_score' => 'string',
-        'time_taken' => 'string',
-        'status' => 'string',
-        'credits_available' => 'int',
-        'error_code' => 'string',
-        'error_message' => 'string',
-        'can_connect_smtp' => 'bool',
-        'email' => 'string',
-        'is_catch_all' => 'bool',
-        'is_deliverable' => 'bool',
-        'is_disabled' => 'bool',
-        'is_inbox_full' => 'bool',
-        'is_role_account' => 'bool',
-        'mx_records' => '\OpenAPI\Client\Model\PromptEmailVerificationApiMX',
-        'syntax_valid' => 'bool',
-        'message' => 'string'
+        'check_if_email_exist' => '\OpenAPI\Client\Model\CheckIfEmailExistResult',
+        'mailboxvalidator' => '\OpenAPI\Client\Model\MailboxvalidatorResult',
+        'prompt_email_verification_api' => '\OpenAPI\Client\Model\PromptEmailVerificationApiResult'
     ];
 
     /**
@@ -107,43 +73,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'input' => null,
-        'is_reachable' => null,
-        'misc' => null,
-        'mx' => null,
-        'smtp' => null,
-        'syntax' => null,
-        'error' => null,
-        'email_address' => null,
-        'domain' => null,
-        'is_free' => null,
-        'is_syntax' => null,
-        'is_domain' => null,
-        'is_smtp' => null,
-        'is_verified' => null,
-        'is_server_down' => null,
-        'is_greylisted' => null,
-        'is_disposable' => null,
-        'is_suppressed' => null,
-        'is_role' => null,
-        'is_high_risk' => null,
-        'is_catchall' => null,
-        'mailboxvalidator_score' => null,
-        'time_taken' => null,
-        'status' => null,
-        'credits_available' => 'int64',
-        'error_code' => null,
-        'error_message' => null,
-        'can_connect_smtp' => null,
-        'email' => null,
-        'is_catch_all' => null,
-        'is_deliverable' => null,
-        'is_disabled' => null,
-        'is_inbox_full' => null,
-        'is_role_account' => null,
-        'mx_records' => null,
-        'syntax_valid' => null,
-        'message' => null
+        'check_if_email_exist' => null,
+        'mailboxvalidator' => null,
+        'prompt_email_verification_api' => null
     ];
 
     /**
@@ -173,43 +105,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'input' => 'input',
-        'is_reachable' => 'is_reachable',
-        'misc' => 'misc',
-        'mx' => 'mx',
-        'smtp' => 'smtp',
-        'syntax' => 'syntax',
-        'error' => 'error',
-        'email_address' => 'email_address',
-        'domain' => 'domain',
-        'is_free' => 'is_free',
-        'is_syntax' => 'is_syntax',
-        'is_domain' => 'is_domain',
-        'is_smtp' => 'is_smtp',
-        'is_verified' => 'is_verified',
-        'is_server_down' => 'is_server_down',
-        'is_greylisted' => 'is_greylisted',
-        'is_disposable' => 'is_disposable',
-        'is_suppressed' => 'is_suppressed',
-        'is_role' => 'is_role',
-        'is_high_risk' => 'is_high_risk',
-        'is_catchall' => 'is_catchall',
-        'mailboxvalidator_score' => 'mailboxvalidator_score',
-        'time_taken' => 'time_taken',
-        'status' => 'status',
-        'credits_available' => 'credits_available',
-        'error_code' => 'error_code',
-        'error_message' => 'error_message',
-        'can_connect_smtp' => 'can_connect_smtp',
-        'email' => 'email',
-        'is_catch_all' => 'is_catch_all',
-        'is_deliverable' => 'is_deliverable',
-        'is_disabled' => 'is_disabled',
-        'is_inbox_full' => 'is_inbox_full',
-        'is_role_account' => 'is_role_account',
-        'mx_records' => 'mx_records',
-        'syntax_valid' => 'syntax_valid',
-        'message' => 'message'
+        'check_if_email_exist' => 'check_if_email_exist',
+        'mailboxvalidator' => 'mailboxvalidator',
+        'prompt_email_verification_api' => 'prompt_email_verification_api'
     ];
 
     /**
@@ -218,43 +116,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'input' => 'setInput',
-        'is_reachable' => 'setIsReachable',
-        'misc' => 'setMisc',
-        'mx' => 'setMx',
-        'smtp' => 'setSmtp',
-        'syntax' => 'setSyntax',
-        'error' => 'setError',
-        'email_address' => 'setEmailAddress',
-        'domain' => 'setDomain',
-        'is_free' => 'setIsFree',
-        'is_syntax' => 'setIsSyntax',
-        'is_domain' => 'setIsDomain',
-        'is_smtp' => 'setIsSmtp',
-        'is_verified' => 'setIsVerified',
-        'is_server_down' => 'setIsServerDown',
-        'is_greylisted' => 'setIsGreylisted',
-        'is_disposable' => 'setIsDisposable',
-        'is_suppressed' => 'setIsSuppressed',
-        'is_role' => 'setIsRole',
-        'is_high_risk' => 'setIsHighRisk',
-        'is_catchall' => 'setIsCatch_all',
-        'mailboxvalidator_score' => 'setMailboxvalidatorScore',
-        'time_taken' => 'setTimeTaken',
-        'status' => 'setStatus',
-        'credits_available' => 'setCreditsAvailable',
-        'error_code' => 'setErrorCode',
-        'error_message' => 'setErrorMessage',
-        'can_connect_smtp' => 'setCanConnectSmtp',
-        'email' => 'setEmail',
-        'is_catch_all' => 'setIsCatchAll',
-        'is_deliverable' => 'setIsDeliverable',
-        'is_disabled' => 'setIsDisabled',
-        'is_inbox_full' => 'setIsInboxFull',
-        'is_role_account' => 'setIsRoleAccount',
-        'mx_records' => 'setMxRecords',
-        'syntax_valid' => 'setSyntaxValid',
-        'message' => 'setMessage'
+        'check_if_email_exist' => 'setCheckIfEmailExist',
+        'mailboxvalidator' => 'setMailboxvalidator',
+        'prompt_email_verification_api' => 'setPromptEmailVerificationApi'
     ];
 
     /**
@@ -263,43 +127,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'input' => 'getInput',
-        'is_reachable' => 'getIsReachable',
-        'misc' => 'getMisc',
-        'mx' => 'getMx',
-        'smtp' => 'getSmtp',
-        'syntax' => 'getSyntax',
-        'error' => 'getError',
-        'email_address' => 'getEmailAddress',
-        'domain' => 'getDomain',
-        'is_free' => 'getIsFree',
-        'is_syntax' => 'getIsSyntax',
-        'is_domain' => 'getIsDomain',
-        'is_smtp' => 'getIsSmtp',
-        'is_verified' => 'getIsVerified',
-        'is_server_down' => 'getIsServerDown',
-        'is_greylisted' => 'getIsGreylisted',
-        'is_disposable' => 'getIsDisposable',
-        'is_suppressed' => 'getIsSuppressed',
-        'is_role' => 'getIsRole',
-        'is_high_risk' => 'getIsHighRisk',
-        'is_catchall' => 'getIsCatch_all',
-        'mailboxvalidator_score' => 'getMailboxvalidatorScore',
-        'time_taken' => 'getTimeTaken',
-        'status' => 'getStatus',
-        'credits_available' => 'getCreditsAvailable',
-        'error_code' => 'getErrorCode',
-        'error_message' => 'getErrorMessage',
-        'can_connect_smtp' => 'getCanConnectSmtp',
-        'email' => 'getEmail',
-        'is_catch_all' => 'getIsCatchAll',
-        'is_deliverable' => 'getIsDeliverable',
-        'is_disabled' => 'getIsDisabled',
-        'is_inbox_full' => 'getIsInboxFull',
-        'is_role_account' => 'getIsRoleAccount',
-        'mx_records' => 'getMxRecords',
-        'syntax_valid' => 'getSyntaxValid',
-        'message' => 'getMessage'
+        'check_if_email_exist' => 'getCheckIfEmailExist',
+        'mailboxvalidator' => 'getMailboxvalidator',
+        'prompt_email_verification_api' => 'getPromptEmailVerificationApi'
     ];
 
     /**
@@ -362,43 +192,9 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['input'] = isset($data['input']) ? $data['input'] : null;
-        $this->container['is_reachable'] = isset($data['is_reachable']) ? $data['is_reachable'] : null;
-        $this->container['misc'] = isset($data['misc']) ? $data['misc'] : null;
-        $this->container['mx'] = isset($data['mx']) ? $data['mx'] : null;
-        $this->container['smtp'] = isset($data['smtp']) ? $data['smtp'] : null;
-        $this->container['syntax'] = isset($data['syntax']) ? $data['syntax'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
-        $this->container['is_free'] = isset($data['is_free']) ? $data['is_free'] : null;
-        $this->container['is_syntax'] = isset($data['is_syntax']) ? $data['is_syntax'] : null;
-        $this->container['is_domain'] = isset($data['is_domain']) ? $data['is_domain'] : null;
-        $this->container['is_smtp'] = isset($data['is_smtp']) ? $data['is_smtp'] : null;
-        $this->container['is_verified'] = isset($data['is_verified']) ? $data['is_verified'] : null;
-        $this->container['is_server_down'] = isset($data['is_server_down']) ? $data['is_server_down'] : null;
-        $this->container['is_greylisted'] = isset($data['is_greylisted']) ? $data['is_greylisted'] : null;
-        $this->container['is_disposable'] = isset($data['is_disposable']) ? $data['is_disposable'] : null;
-        $this->container['is_suppressed'] = isset($data['is_suppressed']) ? $data['is_suppressed'] : null;
-        $this->container['is_role'] = isset($data['is_role']) ? $data['is_role'] : null;
-        $this->container['is_high_risk'] = isset($data['is_high_risk']) ? $data['is_high_risk'] : null;
-        $this->container['is_catchall'] = isset($data['is_catchall']) ? $data['is_catchall'] : null;
-        $this->container['mailboxvalidator_score'] = isset($data['mailboxvalidator_score']) ? $data['mailboxvalidator_score'] : null;
-        $this->container['time_taken'] = isset($data['time_taken']) ? $data['time_taken'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['credits_available'] = isset($data['credits_available']) ? $data['credits_available'] : null;
-        $this->container['error_code'] = isset($data['error_code']) ? $data['error_code'] : null;
-        $this->container['error_message'] = isset($data['error_message']) ? $data['error_message'] : null;
-        $this->container['can_connect_smtp'] = isset($data['can_connect_smtp']) ? $data['can_connect_smtp'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['is_catch_all'] = isset($data['is_catch_all']) ? $data['is_catch_all'] : null;
-        $this->container['is_deliverable'] = isset($data['is_deliverable']) ? $data['is_deliverable'] : null;
-        $this->container['is_disabled'] = isset($data['is_disabled']) ? $data['is_disabled'] : null;
-        $this->container['is_inbox_full'] = isset($data['is_inbox_full']) ? $data['is_inbox_full'] : null;
-        $this->container['is_role_account'] = isset($data['is_role_account']) ? $data['is_role_account'] : null;
-        $this->container['mx_records'] = isset($data['mx_records']) ? $data['mx_records'] : null;
-        $this->container['syntax_valid'] = isset($data['syntax_valid']) ? $data['syntax_valid'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['check_if_email_exist'] = isset($data['check_if_email_exist']) ? $data['check_if_email_exist'] : null;
+        $this->container['mailboxvalidator'] = isset($data['mailboxvalidator']) ? $data['mailboxvalidator'] : null;
+        $this->container['prompt_email_verification_api'] = isset($data['prompt_email_verification_api']) ? $data['prompt_email_verification_api'] : null;
     }
 
     /**
@@ -426,889 +222,73 @@ class EmailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets input
+     * Gets check_if_email_exist
      *
-     * @return string|null
+     * @return \OpenAPI\Client\Model\CheckIfEmailExistResult|null
      */
-    public function getInput()
+    public function getCheckIfEmailExist()
     {
-        return $this->container['input'];
+        return $this->container['check_if_email_exist'];
     }
 
     /**
-     * Sets input
+     * Sets check_if_email_exist
      *
-     * @param string|null $input input
+     * @param \OpenAPI\Client\Model\CheckIfEmailExistResult|null $check_if_email_exist check_if_email_exist
      *
      * @return self
      */
-    public function setInput($input)
+    public function setCheckIfEmailExist($check_if_email_exist)
     {
-        $this->container['input'] = $input;
+        $this->container['check_if_email_exist'] = $check_if_email_exist;
 
         return $this;
     }
 
     /**
-     * Gets is_reachable
+     * Gets mailboxvalidator
      *
-     * @return string|null
+     * @return \OpenAPI\Client\Model\MailboxvalidatorResult|null
      */
-    public function getIsReachable()
+    public function getMailboxvalidator()
     {
-        return $this->container['is_reachable'];
+        return $this->container['mailboxvalidator'];
     }
 
     /**
-     * Sets is_reachable
+     * Sets mailboxvalidator
      *
-     * @param string|null $is_reachable is_reachable
+     * @param \OpenAPI\Client\Model\MailboxvalidatorResult|null $mailboxvalidator mailboxvalidator
      *
      * @return self
      */
-    public function setIsReachable($is_reachable)
+    public function setMailboxvalidator($mailboxvalidator)
     {
-        $this->container['is_reachable'] = $is_reachable;
+        $this->container['mailboxvalidator'] = $mailboxvalidator;
 
         return $this;
     }
 
     /**
-     * Gets misc
+     * Gets prompt_email_verification_api
      *
-     * @return \OpenAPI\Client\Model\CheckIfEmailExistMisc|null
+     * @return \OpenAPI\Client\Model\PromptEmailVerificationApiResult|null
      */
-    public function getMisc()
+    public function getPromptEmailVerificationApi()
     {
-        return $this->container['misc'];
+        return $this->container['prompt_email_verification_api'];
     }
 
     /**
-     * Sets misc
+     * Sets prompt_email_verification_api
      *
-     * @param \OpenAPI\Client\Model\CheckIfEmailExistMisc|null $misc misc
-     *
-     * @return self
-     */
-    public function setMisc($misc)
-    {
-        $this->container['misc'] = $misc;
-
-        return $this;
-    }
-
-    /**
-     * Gets mx
-     *
-     * @return \OpenAPI\Client\Model\CheckIfEmailExistMX|null
-     */
-    public function getMx()
-    {
-        return $this->container['mx'];
-    }
-
-    /**
-     * Sets mx
-     *
-     * @param \OpenAPI\Client\Model\CheckIfEmailExistMX|null $mx mx
+     * @param \OpenAPI\Client\Model\PromptEmailVerificationApiResult|null $prompt_email_verification_api prompt_email_verification_api
      *
      * @return self
      */
-    public function setMx($mx)
+    public function setPromptEmailVerificationApi($prompt_email_verification_api)
     {
-        $this->container['mx'] = $mx;
-
-        return $this;
-    }
-
-    /**
-     * Gets smtp
-     *
-     * @return \OpenAPI\Client\Model\CheckIfEmailExistSMTP|null
-     */
-    public function getSmtp()
-    {
-        return $this->container['smtp'];
-    }
-
-    /**
-     * Sets smtp
-     *
-     * @param \OpenAPI\Client\Model\CheckIfEmailExistSMTP|null $smtp smtp
-     *
-     * @return self
-     */
-    public function setSmtp($smtp)
-    {
-        $this->container['smtp'] = $smtp;
-
-        return $this;
-    }
-
-    /**
-     * Gets syntax
-     *
-     * @return \OpenAPI\Client\Model\CheckIfEmailExistSyntax|null
-     */
-    public function getSyntax()
-    {
-        return $this->container['syntax'];
-    }
-
-    /**
-     * Sets syntax
-     *
-     * @param \OpenAPI\Client\Model\CheckIfEmailExistSyntax|null $syntax syntax
-     *
-     * @return self
-     */
-    public function setSyntax($syntax)
-    {
-        $this->container['syntax'] = $syntax;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     *
-     * @return string|null
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     *
-     * @param string|null $error error
-     *
-     * @return self
-     */
-    public function setError($error)
-    {
-        $this->container['error'] = $error;
-
-        return $this;
-    }
-
-    /**
-     * Gets email_address
-     *
-     * @return string|null
-     */
-    public function getEmailAddress()
-    {
-        return $this->container['email_address'];
-    }
-
-    /**
-     * Sets email_address
-     *
-     * @param string|null $email_address email_address
-     *
-     * @return self
-     */
-    public function setEmailAddress($email_address)
-    {
-        $this->container['email_address'] = $email_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets domain
-     *
-     * @return string|null
-     */
-    public function getDomain()
-    {
-        return $this->container['domain'];
-    }
-
-    /**
-     * Sets domain
-     *
-     * @param string|null $domain domain
-     *
-     * @return self
-     */
-    public function setDomain($domain)
-    {
-        $this->container['domain'] = $domain;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_free
-     *
-     * @return string|null
-     */
-    public function getIsFree()
-    {
-        return $this->container['is_free'];
-    }
-
-    /**
-     * Sets is_free
-     *
-     * @param string|null $is_free is_free
-     *
-     * @return self
-     */
-    public function setIsFree($is_free)
-    {
-        $this->container['is_free'] = $is_free;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_syntax
-     *
-     * @return string|null
-     */
-    public function getIsSyntax()
-    {
-        return $this->container['is_syntax'];
-    }
-
-    /**
-     * Sets is_syntax
-     *
-     * @param string|null $is_syntax is_syntax
-     *
-     * @return self
-     */
-    public function setIsSyntax($is_syntax)
-    {
-        $this->container['is_syntax'] = $is_syntax;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_domain
-     *
-     * @return string|null
-     */
-    public function getIsDomain()
-    {
-        return $this->container['is_domain'];
-    }
-
-    /**
-     * Sets is_domain
-     *
-     * @param string|null $is_domain is_domain
-     *
-     * @return self
-     */
-    public function setIsDomain($is_domain)
-    {
-        $this->container['is_domain'] = $is_domain;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_smtp
-     *
-     * @return string|null
-     */
-    public function getIsSmtp()
-    {
-        return $this->container['is_smtp'];
-    }
-
-    /**
-     * Sets is_smtp
-     *
-     * @param string|null $is_smtp is_smtp
-     *
-     * @return self
-     */
-    public function setIsSmtp($is_smtp)
-    {
-        $this->container['is_smtp'] = $is_smtp;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_verified
-     *
-     * @return string|null
-     */
-    public function getIsVerified()
-    {
-        return $this->container['is_verified'];
-    }
-
-    /**
-     * Sets is_verified
-     *
-     * @param string|null $is_verified is_verified
-     *
-     * @return self
-     */
-    public function setIsVerified($is_verified)
-    {
-        $this->container['is_verified'] = $is_verified;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_server_down
-     *
-     * @return string|null
-     */
-    public function getIsServerDown()
-    {
-        return $this->container['is_server_down'];
-    }
-
-    /**
-     * Sets is_server_down
-     *
-     * @param string|null $is_server_down is_server_down
-     *
-     * @return self
-     */
-    public function setIsServerDown($is_server_down)
-    {
-        $this->container['is_server_down'] = $is_server_down;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_greylisted
-     *
-     * @return string|null
-     */
-    public function getIsGreylisted()
-    {
-        return $this->container['is_greylisted'];
-    }
-
-    /**
-     * Sets is_greylisted
-     *
-     * @param string|null $is_greylisted is_greylisted
-     *
-     * @return self
-     */
-    public function setIsGreylisted($is_greylisted)
-    {
-        $this->container['is_greylisted'] = $is_greylisted;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_disposable
-     *
-     * @return bool|null
-     */
-    public function getIsDisposable()
-    {
-        return $this->container['is_disposable'];
-    }
-
-    /**
-     * Sets is_disposable
-     *
-     * @param bool|null $is_disposable is_disposable
-     *
-     * @return self
-     */
-    public function setIsDisposable($is_disposable)
-    {
-        $this->container['is_disposable'] = $is_disposable;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_suppressed
-     *
-     * @return string|null
-     */
-    public function getIsSuppressed()
-    {
-        return $this->container['is_suppressed'];
-    }
-
-    /**
-     * Sets is_suppressed
-     *
-     * @param string|null $is_suppressed is_suppressed
-     *
-     * @return self
-     */
-    public function setIsSuppressed($is_suppressed)
-    {
-        $this->container['is_suppressed'] = $is_suppressed;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_role
-     *
-     * @return string|null
-     */
-    public function getIsRole()
-    {
-        return $this->container['is_role'];
-    }
-
-    /**
-     * Sets is_role
-     *
-     * @param string|null $is_role is_role
-     *
-     * @return self
-     */
-    public function setIsRole($is_role)
-    {
-        $this->container['is_role'] = $is_role;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_high_risk
-     *
-     * @return string|null
-     */
-    public function getIsHighRisk()
-    {
-        return $this->container['is_high_risk'];
-    }
-
-    /**
-     * Sets is_high_risk
-     *
-     * @param string|null $is_high_risk is_high_risk
-     *
-     * @return self
-     */
-    public function setIsHighRisk($is_high_risk)
-    {
-        $this->container['is_high_risk'] = $is_high_risk;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_catchall
-     *
-     * @return string|null
-     */
-    public function getIsCatch_all()
-    {
-        return $this->container['is_catchall'];
-    }
-
-    /**
-     * Sets is_catchall
-     *
-     * @param string|null $is_catchall is_catchall
-     *
-     * @return self
-     */
-    public function setIsCatch_all($is_catchall)
-    {
-        $this->container['is_catchall'] = $is_catchall;
-
-        return $this;
-    }
-
-    /**
-     * Gets mailboxvalidator_score
-     *
-     * @return string|null
-     */
-    public function getMailboxvalidatorScore()
-    {
-        return $this->container['mailboxvalidator_score'];
-    }
-
-    /**
-     * Sets mailboxvalidator_score
-     *
-     * @param string|null $mailboxvalidator_score mailboxvalidator_score
-     *
-     * @return self
-     */
-    public function setMailboxvalidatorScore($mailboxvalidator_score)
-    {
-        $this->container['mailboxvalidator_score'] = $mailboxvalidator_score;
-
-        return $this;
-    }
-
-    /**
-     * Gets time_taken
-     *
-     * @return string|null
-     */
-    public function getTimeTaken()
-    {
-        return $this->container['time_taken'];
-    }
-
-    /**
-     * Sets time_taken
-     *
-     * @param string|null $time_taken time_taken
-     *
-     * @return self
-     */
-    public function setTimeTaken($time_taken)
-    {
-        $this->container['time_taken'] = $time_taken;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets credits_available
-     *
-     * @return int|null
-     */
-    public function getCreditsAvailable()
-    {
-        return $this->container['credits_available'];
-    }
-
-    /**
-     * Sets credits_available
-     *
-     * @param int|null $credits_available credits_available
-     *
-     * @return self
-     */
-    public function setCreditsAvailable($credits_available)
-    {
-        $this->container['credits_available'] = $credits_available;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_code
-     *
-     * @return string|null
-     */
-    public function getErrorCode()
-    {
-        return $this->container['error_code'];
-    }
-
-    /**
-     * Sets error_code
-     *
-     * @param string|null $error_code error_code
-     *
-     * @return self
-     */
-    public function setErrorCode($error_code)
-    {
-        $this->container['error_code'] = $error_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_message
-     *
-     * @return string|null
-     */
-    public function getErrorMessage()
-    {
-        return $this->container['error_message'];
-    }
-
-    /**
-     * Sets error_message
-     *
-     * @param string|null $error_message error_message
-     *
-     * @return self
-     */
-    public function setErrorMessage($error_message)
-    {
-        $this->container['error_message'] = $error_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets can_connect_smtp
-     *
-     * @return bool|null
-     */
-    public function getCanConnectSmtp()
-    {
-        return $this->container['can_connect_smtp'];
-    }
-
-    /**
-     * Sets can_connect_smtp
-     *
-     * @param bool|null $can_connect_smtp can_connect_smtp
-     *
-     * @return self
-     */
-    public function setCanConnectSmtp($can_connect_smtp)
-    {
-        $this->container['can_connect_smtp'] = $can_connect_smtp;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_catch_all
-     *
-     * @return bool|null
-     */
-    public function getIsCatchAll()
-    {
-        return $this->container['is_catch_all'];
-    }
-
-    /**
-     * Sets is_catch_all
-     *
-     * @param bool|null $is_catch_all is_catch_all
-     *
-     * @return self
-     */
-    public function setIsCatchAll($is_catch_all)
-    {
-        $this->container['is_catch_all'] = $is_catch_all;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_deliverable
-     *
-     * @return bool|null
-     */
-    public function getIsDeliverable()
-    {
-        return $this->container['is_deliverable'];
-    }
-
-    /**
-     * Sets is_deliverable
-     *
-     * @param bool|null $is_deliverable is_deliverable
-     *
-     * @return self
-     */
-    public function setIsDeliverable($is_deliverable)
-    {
-        $this->container['is_deliverable'] = $is_deliverable;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_disabled
-     *
-     * @return bool|null
-     */
-    public function getIsDisabled()
-    {
-        return $this->container['is_disabled'];
-    }
-
-    /**
-     * Sets is_disabled
-     *
-     * @param bool|null $is_disabled is_disabled
-     *
-     * @return self
-     */
-    public function setIsDisabled($is_disabled)
-    {
-        $this->container['is_disabled'] = $is_disabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_inbox_full
-     *
-     * @return bool|null
-     */
-    public function getIsInboxFull()
-    {
-        return $this->container['is_inbox_full'];
-    }
-
-    /**
-     * Sets is_inbox_full
-     *
-     * @param bool|null $is_inbox_full is_inbox_full
-     *
-     * @return self
-     */
-    public function setIsInboxFull($is_inbox_full)
-    {
-        $this->container['is_inbox_full'] = $is_inbox_full;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_role_account
-     *
-     * @return bool|null
-     */
-    public function getIsRoleAccount()
-    {
-        return $this->container['is_role_account'];
-    }
-
-    /**
-     * Sets is_role_account
-     *
-     * @param bool|null $is_role_account is_role_account
-     *
-     * @return self
-     */
-    public function setIsRoleAccount($is_role_account)
-    {
-        $this->container['is_role_account'] = $is_role_account;
-
-        return $this;
-    }
-
-    /**
-     * Gets mx_records
-     *
-     * @return \OpenAPI\Client\Model\PromptEmailVerificationApiMX|null
-     */
-    public function getMxRecords()
-    {
-        return $this->container['mx_records'];
-    }
-
-    /**
-     * Sets mx_records
-     *
-     * @param \OpenAPI\Client\Model\PromptEmailVerificationApiMX|null $mx_records mx_records
-     *
-     * @return self
-     */
-    public function setMxRecords($mx_records)
-    {
-        $this->container['mx_records'] = $mx_records;
-
-        return $this;
-    }
-
-    /**
-     * Gets syntax_valid
-     *
-     * @return bool|null
-     */
-    public function getSyntaxValid()
-    {
-        return $this->container['syntax_valid'];
-    }
-
-    /**
-     * Sets syntax_valid
-     *
-     * @param bool|null $syntax_valid syntax_valid
-     *
-     * @return self
-     */
-    public function setSyntaxValid($syntax_valid)
-    {
-        $this->container['syntax_valid'] = $syntax_valid;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
+        $this->container['prompt_email_verification_api'] = $prompt_email_verification_api;
 
         return $this;
     }

@@ -40,6 +40,7 @@ namespace Org.OpenAPITools.Model
         public CheckIfEmailExistSyntax(string address = default(string), string domain = default(string), bool isValidSyntax = default(bool), string username = default(string))
         {
             this.Address = address;
+            this.Address = address;
             this.Domain = domain;
             this.IsValidSyntax = isValidSyntax;
             this.Username = username;
@@ -48,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name="address", EmitDefaultValue=true)]
         public string Address { get; set; }
 
         /// <summary>

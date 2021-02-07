@@ -27,7 +27,7 @@ class TestCallApi(unittest.TestCase):
         email = os.environ["EMAIL"]
         result = self.api.email_validation_single_validation_get(email=email)  # type: CheckIfEmailExistResult
 
-        self.assertEqual(result["input"], email)
+        self.assertEqual(result["check_if_email_exist"]["input"], email)
 
 
 if __name__ == '__main__':

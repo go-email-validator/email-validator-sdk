@@ -1,7 +1,7 @@
 /*
  * Email Validator
  *
- * All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds. 
+ * All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds.
  *
  * API version: 0.0.1
  */
@@ -12,122 +12,140 @@ package openapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// EmailResponse - struct for EmailResponse
+// EmailResponse struct for EmailResponse
 type EmailResponse struct {
-	CheckIfEmailExistResult *CheckIfEmailExistResult
-	MailboxvalidatorResult *MailboxvalidatorResult
-	PromptEmailVerificationApiResult *PromptEmailVerificationApiResult
+	CheckIfEmailExist          *CheckIfEmailExistResult          `json:"check_if_email_exist,omitempty"`
+	Mailboxvalidator           *MailboxvalidatorResult           `json:"mailboxvalidator,omitempty"`
+	PromptEmailVerificationApi *PromptEmailVerificationApiResult `json:"prompt_email_verification_api,omitempty"`
 }
 
-// CheckIfEmailExistResultAsEmailResponse is a convenience function that returns CheckIfEmailExistResult wrapped in EmailResponse
-func CheckIfEmailExistResultAsEmailResponse(v *CheckIfEmailExistResult) EmailResponse {
-	return EmailResponse{ CheckIfEmailExistResult: v}
+// NewEmailResponse instantiates a new EmailResponse object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewEmailResponse() *EmailResponse {
+	this := EmailResponse{}
+	return &this
 }
 
-// MailboxvalidatorResultAsEmailResponse is a convenience function that returns MailboxvalidatorResult wrapped in EmailResponse
-func MailboxvalidatorResultAsEmailResponse(v *MailboxvalidatorResult) EmailResponse {
-	return EmailResponse{ MailboxvalidatorResult: v}
+// NewEmailResponseWithDefaults instantiates a new EmailResponse object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewEmailResponseWithDefaults() *EmailResponse {
+	this := EmailResponse{}
+	return &this
 }
 
-// PromptEmailVerificationApiResultAsEmailResponse is a convenience function that returns PromptEmailVerificationApiResult wrapped in EmailResponse
-func PromptEmailVerificationApiResultAsEmailResponse(v *PromptEmailVerificationApiResult) EmailResponse {
-	return EmailResponse{ PromptEmailVerificationApiResult: v}
+// GetCheckIfEmailExist returns the CheckIfEmailExist field value if set, zero value otherwise.
+func (o *EmailResponse) GetCheckIfEmailExist() CheckIfEmailExistResult {
+	if o == nil || o.CheckIfEmailExist == nil {
+		var ret CheckIfEmailExistResult
+		return ret
+	}
+	return *o.CheckIfEmailExist
 }
 
-
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *EmailResponse) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into CheckIfEmailExistResult
-	err = json.Unmarshal(data, &dst.CheckIfEmailExistResult)
-	if err == nil {
-		jsonCheckIfEmailExistResult, _ := json.Marshal(dst.CheckIfEmailExistResult)
-		if string(jsonCheckIfEmailExistResult) == "{}" { // empty struct
-			dst.CheckIfEmailExistResult = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.CheckIfEmailExistResult = nil
+// GetCheckIfEmailExistOk returns a tuple with the CheckIfEmailExist field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EmailResponse) GetCheckIfEmailExistOk() (*CheckIfEmailExistResult, bool) {
+	if o == nil || o.CheckIfEmailExist == nil {
+		return nil, false
 	}
-
-	// try to unmarshal data into MailboxvalidatorResult
-	err = json.Unmarshal(data, &dst.MailboxvalidatorResult)
-	if err == nil {
-		jsonMailboxvalidatorResult, _ := json.Marshal(dst.MailboxvalidatorResult)
-		if string(jsonMailboxvalidatorResult) == "{}" { // empty struct
-			dst.MailboxvalidatorResult = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.MailboxvalidatorResult = nil
-	}
-
-	// try to unmarshal data into PromptEmailVerificationApiResult
-	err = json.Unmarshal(data, &dst.PromptEmailVerificationApiResult)
-	if err == nil {
-		jsonPromptEmailVerificationApiResult, _ := json.Marshal(dst.PromptEmailVerificationApiResult)
-		if string(jsonPromptEmailVerificationApiResult) == "{}" { // empty struct
-			dst.PromptEmailVerificationApiResult = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PromptEmailVerificationApiResult = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.CheckIfEmailExistResult = nil
-		dst.MailboxvalidatorResult = nil
-		dst.PromptEmailVerificationApiResult = nil
-
-		return fmt.Errorf("Data matches more than one schema in oneOf(EmailResponse)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(EmailResponse)")
-	}
+	return o.CheckIfEmailExist, true
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src EmailResponse) MarshalJSON() ([]byte, error) {
-	if src.CheckIfEmailExistResult != nil {
-		return json.Marshal(&src.CheckIfEmailExistResult)
+// HasCheckIfEmailExist returns a boolean if a field has been set.
+func (o *EmailResponse) HasCheckIfEmailExist() bool {
+	if o != nil && o.CheckIfEmailExist != nil {
+		return true
 	}
 
-	if src.MailboxvalidatorResult != nil {
-		return json.Marshal(&src.MailboxvalidatorResult)
-	}
-
-	if src.PromptEmailVerificationApiResult != nil {
-		return json.Marshal(&src.PromptEmailVerificationApiResult)
-	}
-
-	return nil, nil // no data in oneOf schemas
+	return false
 }
 
-// Get the actual instance
-func (obj *EmailResponse) GetActualInstance() (interface{}) {
-	if obj.CheckIfEmailExistResult != nil {
-		return obj.CheckIfEmailExistResult
+// SetCheckIfEmailExist gets a reference to the given CheckIfEmailExistResult and assigns it to the CheckIfEmailExist field.
+func (o *EmailResponse) SetCheckIfEmailExist(v CheckIfEmailExistResult) {
+	o.CheckIfEmailExist = &v
+}
+
+// GetMailboxvalidator returns the Mailboxvalidator field value if set, zero value otherwise.
+func (o *EmailResponse) GetMailboxvalidator() MailboxvalidatorResult {
+	if o == nil || o.Mailboxvalidator == nil {
+		var ret MailboxvalidatorResult
+		return ret
+	}
+	return *o.Mailboxvalidator
+}
+
+// GetMailboxvalidatorOk returns a tuple with the Mailboxvalidator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EmailResponse) GetMailboxvalidatorOk() (*MailboxvalidatorResult, bool) {
+	if o == nil || o.Mailboxvalidator == nil {
+		return nil, false
+	}
+	return o.Mailboxvalidator, true
+}
+
+// HasMailboxvalidator returns a boolean if a field has been set.
+func (o *EmailResponse) HasMailboxvalidator() bool {
+	if o != nil && o.Mailboxvalidator != nil {
+		return true
 	}
 
-	if obj.MailboxvalidatorResult != nil {
-		return obj.MailboxvalidatorResult
+	return false
+}
+
+// SetMailboxvalidator gets a reference to the given MailboxvalidatorResult and assigns it to the Mailboxvalidator field.
+func (o *EmailResponse) SetMailboxvalidator(v MailboxvalidatorResult) {
+	o.Mailboxvalidator = &v
+}
+
+// GetPromptEmailVerificationApi returns the PromptEmailVerificationApi field value if set, zero value otherwise.
+func (o *EmailResponse) GetPromptEmailVerificationApi() PromptEmailVerificationApiResult {
+	if o == nil || o.PromptEmailVerificationApi == nil {
+		var ret PromptEmailVerificationApiResult
+		return ret
+	}
+	return *o.PromptEmailVerificationApi
+}
+
+// GetPromptEmailVerificationApiOk returns a tuple with the PromptEmailVerificationApi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EmailResponse) GetPromptEmailVerificationApiOk() (*PromptEmailVerificationApiResult, bool) {
+	if o == nil || o.PromptEmailVerificationApi == nil {
+		return nil, false
+	}
+	return o.PromptEmailVerificationApi, true
+}
+
+// HasPromptEmailVerificationApi returns a boolean if a field has been set.
+func (o *EmailResponse) HasPromptEmailVerificationApi() bool {
+	if o != nil && o.PromptEmailVerificationApi != nil {
+		return true
 	}
 
-	if obj.PromptEmailVerificationApiResult != nil {
-		return obj.PromptEmailVerificationApiResult
-	}
+	return false
+}
 
-	// all schemas are nil
-	return nil
+// SetPromptEmailVerificationApi gets a reference to the given PromptEmailVerificationApiResult and assigns it to the PromptEmailVerificationApi field.
+func (o *EmailResponse) SetPromptEmailVerificationApi(v PromptEmailVerificationApiResult) {
+	o.PromptEmailVerificationApi = &v
+}
+
+func (o EmailResponse) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+	if o.CheckIfEmailExist != nil {
+		toSerialize["check_if_email_exist"] = o.CheckIfEmailExist
+	}
+	if o.Mailboxvalidator != nil {
+		toSerialize["mailboxvalidator"] = o.Mailboxvalidator
+	}
+	if o.PromptEmailVerificationApi != nil {
+		toSerialize["prompt_email_verification_api"] = o.PromptEmailVerificationApi
+	}
+	return json.Marshal(toSerialize)
 }
 
 type NullableEmailResponse struct {
@@ -165,5 +183,3 @@ func (v *NullableEmailResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

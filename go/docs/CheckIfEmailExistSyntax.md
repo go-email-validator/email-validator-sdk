@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | Pointer to **string** |  | [optional] 
+**Address** | Pointer to **NullableString** |  | [optional] 
 **Domain** | Pointer to **string** |  | [optional] 
 **IsValidSyntax** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
@@ -53,6 +53,16 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
+### SetAddressNil
+
+`func (o *CheckIfEmailExistSyntax) SetAddressNil(b bool)`
+
+ SetAddressNil sets the value for Address to be an explicit nil
+
+### UnsetAddress
+`func (o *CheckIfEmailExistSyntax) UnsetAddress()`
+
+UnsetAddress ensures that no value is present for Address, not even an explicit nil
 ### GetDomain
 
 `func (o *CheckIfEmailExistSyntax) GetDomain() string`

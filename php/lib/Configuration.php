@@ -1,7 +1,7 @@
 <?php
 /**
  * Configuration
- * PHP version 7.2
+ * PHP version 5.6
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -30,7 +30,7 @@ namespace OpenAPI\Client;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 7.2
+ * PHP version 5.6
  *
  * @category Class
  * @package  OpenAPI\Client

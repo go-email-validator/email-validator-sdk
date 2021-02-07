@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   title: Email Validator
   version: 0.0.1
@@ -53,6 +53,7 @@ components:
       type: object
       properties:
         address:
+          nullable: true
           type: string
         domain:
           type: string
@@ -224,10 +225,15 @@ components:
         result_type:
           $ref: '#/components/schemas/ResultType'
     EmailResponse:
-      oneOf: # oneOf: https://github.com/swagger-api/swagger-codegen/issues/10896
-        - $ref: '#/components/schemas/CheckIfEmailExistResult'
-        - $ref: '#/components/schemas/MailboxvalidatorResult'
-        - $ref: '#/components/schemas/PromptEmailVerificationApiResult'
+      type: object
+      nullable: true
+      properties:
+        check_if_email_exist:
+          $ref: '#/components/schemas/CheckIfEmailExistResult'
+        mailboxvalidator:
+          $ref: '#/components/schemas/MailboxvalidatorResult'
+        prompt_email_verification_api:
+          $ref: '#/components/schemas/PromptEmailVerificationApiResult'
   securitySchemes:
     AuthKey:
       type: apiKey

@@ -1,7 +1,7 @@
 <?php
 /**
  * EmailValidationApi
- * PHP version 7.2
+ * PHP version 5.6
  *
  * @category Class
  * @package  OpenAPI\Client
