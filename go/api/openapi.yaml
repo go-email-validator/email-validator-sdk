@@ -402,7 +402,6 @@ components:
           misc:
             is_role_account: true
             is_disposable: true
-      nullable: true
       properties:
         check_if_email_exist:
           $ref: '#/components/schemas/CheckIfEmailExistResult'

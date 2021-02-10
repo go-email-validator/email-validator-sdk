@@ -224,7 +224,7 @@ components:
         #              default: *TimeoutDefault
         result_type:
           $ref: '#/components/schemas/ResultType'
-    EmailResponse:
+    EmailResponse: # wait to return oneOf https://github.com/OpenAPITools/openapi-generator/issues/8628
       type: object
       properties:
         check_if_email_exist:

@@ -69,7 +69,7 @@ class EmailResponse(ModelNormal):
 
     additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():

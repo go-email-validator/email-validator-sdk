@@ -18,13 +18,12 @@ define openapi_generator
 	$(eval GEN_LANG=$(1))
 	$(eval GEN_DIR=$(or $(2),$(GEN_LANG)))
 	mkdir -p $(GEN_DIR)
-	docker run --user "$(DOCKER_USER_RUN)" --rm -v ${PWD}/$(GEN_DIR):/local/out -v $(OPENAPI_PATH):/local/openapi.yaml  openapitools/openapi-generator-cli:latest generate \
+	docker run --user "$(DOCKER_USER_RUN)" --rm -v ${PWD}/$(GEN_DIR):/local/out -v $(OPENAPI_PATH):/local/openapi.yaml openapitools/openapi-generator-cli:latest generate \
 	-i /local/openapi.yaml \
 	-g $(GEN_LANG) \
 	-o /local/out/
 endef
-
-# docker run --rm openapitools/openapi-generator-cli:latest generate
+# 	--additional-properties=ensureUniqueParams=true
 
 update: gen cp.openapi.file
 

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MailboxvalidatorResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-02-07T13:45:54.124Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-02-10T07:42:09.412Z[GMT]")
 public class MailboxvalidatorResult {
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "email_address";
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)

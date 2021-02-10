@@ -2,7 +2,7 @@
 
 Email Validator
 - API version: 0.0.1
-  - Build date: 2021-02-07T13:45:54.124Z[GMT]
+  - Build date: 2021-02-10T07:42:09.412Z[GMT]
 
 All timeouts are set in seconds with nanosecond precision. For example, 1.505402 is 1 second, 505 milliseconds and 402 microseconds.
 
